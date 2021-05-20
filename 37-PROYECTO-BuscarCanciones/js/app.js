@@ -1,6 +1,5 @@
 import * as UI from './interfaz.js';
-
-console.log(UI);
+import API from './api.js';
 
 UI.formularioBuscar.addEventListener('submit', buscarCancion);
 
@@ -26,5 +25,7 @@ if( artista === '' || cancion === '' ) {
 }
 
 //Consultar nuestra API
+const busqueda = new API(artista, cancion);
+busqueda.consultarAPI();
 }
 
