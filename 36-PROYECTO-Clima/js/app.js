@@ -62,6 +62,14 @@ function consultarAPI(ciudad, pais) {
         console.log(datos);
         if(datos.cod === "404") {
             mostrarError('Ciudad no encontrada')
+            return;
         }
+
+        //Se imprime la respuesta en el HTML
+        mostrarClima(datos);
     })
+}
+
+function mostrarClima(datos) {
+    const {main: {} } = datos;
 }
