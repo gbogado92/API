@@ -56,8 +56,26 @@ function submitFormulario(e) {
          return;
      }
 
+     //Consultar la API cons los resultados
+
 } 
 
 function mostrarAlerta(msg) {
-    console.log(msg);
+
+    const existeError = document.querySelector('.error');
+    
+    if(!existeError) {
+        const divMensaje = document.createElement('p');
+        divMensaje.classList.add('error');
+    
+        //Mensaje de error
+        divMensaje.textContent = msg;
+    
+        formulario.appendChild(divMensaje);
+    
+        setTimeout( () => {
+            divMensaje.remove();
+        }, 3000);
+    }
+
 }
